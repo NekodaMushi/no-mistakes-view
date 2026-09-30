@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>no-mistakes-view</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <header>
+    <nav id="tabs" role="tablist" aria-label="Runs en cours"></nav>
+    <div id="status" title="Lecture seule de ~/.no-mistakes">…</div>
+  </header>
+  <main id="view"></main>
+  <footer>
+    <span>← → changer d'onglet</span>
+    <span>1–9 aller à l'onglet</span>
+    <span>Maj + ← → changer de noeud</span>
+    <span>Échap revenir au noeud actif</span>
+    <span class="quit"><kbd>q</kbd> quitter et revenir au terminal</span>
+  </footer>
+  <script src="/app.js"></script>
+</body>
+</html>

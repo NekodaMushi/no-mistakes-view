@@ -1,0 +1,44 @@
+# Copie réduite d'un config.yaml réel de no-mistakes.
+agent: claude  # commentaire en fin de ligne
+
+agent_path_override:
+  pi: /home/user/.no-mistakes/bin/pi-node24
+
+ci_timeout: "168h"
+step_quiet_warning: "10m"
+session_reuse: true
+log_level: info
+
+# agent_args_override:
+#   codex:
+#     - -m
+#     - gpt-5.4
+agent_args_override:
+  pi:
+    - --model
+    - opencode-go/glm-5.3-flash
+    - --thinking
+    - max
+#
+auto_fix:
+  rebase: 3
+  lint: 3
+  review: 0
+
+intent:
+  enabled: true
+  threshold: 0.2
+  # disabled_readers: [codex]
+
+agent_config:
+  claude:
+    model: claude-opus-5
+    effort: high
+
+review_agents:
+  reviewer:
+    agent: claude
+    model: claude-opus-5
+    effort: high
+  fixer:
+    agent: pi
